@@ -1,2 +1,2 @@
-(cd ~/dotfiles/st; stow -t ~/bin st)
+(cd ~/dotfiles/st; stow -t ~/ bin)
 
