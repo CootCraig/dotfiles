@@ -1,0 +1,122 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+" Check for windows or linux and set up vundle appropriately
+if !empty(glob("~/.vim"))
+   " folder .vim/ exists, assume on linux
+   set rtp+=~/.vim/bundle/vundle/
+   call vundle#rc()
+else
+   " no folder .vim/ exists, assume on windows and use vimfiles/
+   set rtp+=~/vimfiles/bundle/vundle/
+   let path='~/vimfiles/bundle'
+   call vundle#begin(path)
+endif
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'godlygeek/csapprox'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'pangloss/vim-javascript'
+Bundle 'bitfyre/vim-indent-html'
+Bundle 'thisivan/vim-bufexplorer'
+Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/syntastic'
+Bundle 'leshill/vim-json'
+Bundle 'tpope/vim-markdown'
+Bundle 'duff/vim-scratch'
+Bundle 'tpope/vim-surround'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'vim-scripts/vim-json-bundle'
+Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'vim-scripts/UltiSnips'
+" Lokaltog/powerline
+
+runtime! macros/matchit.vim
+
+" Set temporary directory (don't litter local dir with swp/tmp files)
+"set directory=~/tmp/vim_temp
+set nobackup
+set nowritebackup
+set noswapfile
+set hidden
+
+"Use case-smart searching
+set ignorecase
+set smartcase
+
+set title
+set scrolloff=3
+set shortmess=atI
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+
+" assume the /g flag on :s substitutions to replace all matches in a line:
+set gdefault
+
+" Enable filetype-specific indenting, syntax, and plugins
+filetype plugin indent on
+syntax on
+
+let mapleader = ","
+" NERDTree CONFIGURATION
+
+" Enable nice colors
+let NERDChristmasTree = 1
+
+" Make it easy to see where we are
+let NERDTreeHighlightCursorline = 1
+
+" Make bookmarks visible
+let NERDTreeShowBookmarks = 1
+
+" Show hidden files
+let NERDTreeShowHidden = 1
+
+" Don't hijack NETRW
+let NERDTreeHijackNetrw = 0
+let NERDTreeIgnore=['\.$', '\~$']
+
+" Make F2 open NERDTree
+nmap <F2> :NERDTreeToggle<CR>
+
+syntax enable
+" set term=screen-256color
+colorscheme solarized
+
+" html indentation provided by Andy Wokula is faster. But you need to make some configuration.
+" Suggested configuration:
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+" use indents of 2 spaces, and have them copied down lines:
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
+" WINDOW SPLITTING
+
+" Open new horizontal split windows below current
+set splitbelow
+
+" Open new vertical split windows to the right
+set splitright
+
+" STATUS BAR CONFIG
+
+set laststatus=2
+set statusline=\ "
+set statusline+=%f\ " file name
+set statusline+=[
+set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+set statusline+=]
+set statusline+=%h%1*%m%r%w%0* " flag
+set statusline+=%= " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+
