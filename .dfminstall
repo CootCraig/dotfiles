@@ -2,6 +2,3 @@ README.md skip
 
 .vim/bundle/git-vundle.sh exec
 
-st skip
-st/install-st.sh exec
-
