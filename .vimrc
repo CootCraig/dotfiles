@@ -37,6 +37,10 @@ Bundle 'Lokaltog/vim-easymotion'
 
 runtime! macros/matchit.vim
 
+if has('gui_running')
+  set guifont=Inconsolata\ 13
+endif
+
 " Set temporary directory (don't litter local dir with swp/tmp files)
 "set directory=~/tmp/vim_temp
 set nobackup
