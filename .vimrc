@@ -90,6 +90,7 @@ nmap <F2> :NERDTreeToggle<CR>
 
 syntax enable
 " set term=screen-256color
+set background=dark
 colorscheme solarized
 
 " html indentation provided by Andy Wokula is faster. But you need to make some configuration.
