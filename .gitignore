@@ -1,4 +1,7 @@
 .icedove/
 .remmina/
 .weechat/
+.moc/
+!.moc/config
+!.moc/config.example
 

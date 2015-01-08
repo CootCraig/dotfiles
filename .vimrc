@@ -17,10 +17,12 @@ endif
 " required! 
 Bundle 'gmarik/vundle'
 
-Bundle 'godlygeek/csapprox'
+" Bundle 'godlygeek/csapprox'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'pangloss/vim-javascript'
-Bundle 'bitfyre/vim-indent-html'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'vim-scripts/JavaScript-Indent'
+" Bundle 'pangloss/vim-javascript'
+" Bundle 'bitfyre/vim-indent-html'
 Bundle 'thisivan/vim-bufexplorer'
 Bundle 'scrooloose/nerdtree'
 " Bundle 'scrooloose/syntastic'
@@ -32,6 +34,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'vim-scripts/vim-json-bundle'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'othree/html5.vim'
 " Bundle 'vim-scripts/UltiSnips'
 " Lokaltog/powerline
 
@@ -89,7 +92,6 @@ let NERDTreeIgnore=['\.$', '\~$']
 nmap <F2> :NERDTreeToggle<CR>
 
 syntax enable
-" set term=screen-256color
 set background=dark
 colorscheme solarized
 
