@@ -1,3 +1,5 @@
 [user]
 	name = Craig Anderson
 	email = craig@coot.net
+[core]
+	autocrlf = input
