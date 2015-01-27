@@ -50,7 +50,9 @@ plugins=(git)
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+eval "$(rbenv init -)"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,3 +80,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+. $HOME/.shellrc.load
