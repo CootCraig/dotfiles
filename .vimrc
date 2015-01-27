@@ -4,8 +4,8 @@ filetype off                   " required!
 " Check for windows or linux and set up vundle appropriately
 if !empty(glob("~/.vim"))
    " folder .vim/ exists, assume on linux
-   set rtp+=~/.vim/bundle/vundle/
-   call vundle#rc()
+   set rtp+=~/.vim/bundle/Vundle.vim
+   call vundle#begin()
 else
    " no folder .vim/ exists, assume on windows and use vimfiles/
    set rtp+=~/vimfiles/bundle/vundle/
@@ -13,30 +13,27 @@ else
    call vundle#begin(path)
 endif
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-" Bundle 'godlygeek/csapprox'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'vim-scripts/JavaScript-Indent'
-" Bundle 'pangloss/vim-javascript'
-" Bundle 'bitfyre/vim-indent-html'
-Bundle 'thisivan/vim-bufexplorer'
-Bundle 'scrooloose/nerdtree'
-" Bundle 'scrooloose/syntastic'
-Bundle 'leshill/vim-json'
-Bundle 'tpope/vim-markdown'
-Bundle 'duff/vim-scratch'
-Bundle 'tpope/vim-surround'
-Bundle 'kana/vim-textobj-user'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'vim-scripts/vim-json-bundle'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'othree/html5.vim'
-" Bundle 'vim-scripts/UltiSnips'
-" Lokaltog/powerline
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'duff/vim-scratch'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-haml'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'thisivan/vim-bufexplorer'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'bitfyre/vim-indent-html'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 runtime! macros/matchit.vim
 
@@ -53,20 +50,20 @@ set hidden
 
 "Use case-smart searching
 set ignorecase
-set smartcase
+"set smartcase
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+set hlsearch
 
 set title
 set scrolloff=3
 set shortmess=atI
 
-" show the `best match so far' as search strings are typed:
-set incsearch
-
 " assume the /g flag on :s substitutions to replace all matches in a line:
 set gdefault
 
 " Enable filetype-specific indenting, syntax, and plugins
-filetype plugin indent on
 syntax on
 
 let mapleader = ","
@@ -95,11 +92,10 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-" html indentation provided by Andy Wokula is faster. But you need to make some configuration.
-" Suggested configuration:
+" bitfyre/vim-indent-html
+" Add tags that increase indent with let g:html_indent_inctags = "html,body,head,tbody"
+" Remove tags with let g:html_indent_autotags = "th,td,tr,tfoot,thead" 
 let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
 
 " use indents of 2 spaces, and have them copied down lines:
 set expandtab
@@ -126,4 +122,5 @@ set statusline+=]
 set statusline+=%h%1*%m%r%w%0* " flag
 set statusline+=%= " right align
 set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+
 
