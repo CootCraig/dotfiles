@@ -1,5 +1,5 @@
 README.md skip
 .gitignore skip
 
-.vim/bundle/git-vundle.sh exec
+vundle-install.sh exec
 
