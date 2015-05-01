@@ -1,5 +1,6 @@
 README.md skip
 .gitignore skip
 
+vundle-install.sh exec
 vundle-install.sh skip
 
