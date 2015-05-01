@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/opt/java/java/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 eval "$(rbenv init -)"
