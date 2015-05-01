@@ -90,7 +90,7 @@ nmap <F2> :NERDTreeToggle<CR>
 
 syntax enable
 set background=dark
-colorscheme solarized
+silent!  colorscheme solarized
 
 " bitfyre/vim-indent-html
 " Add tags that increase indent with let g:html_indent_inctags = "html,body,head,tbody"
