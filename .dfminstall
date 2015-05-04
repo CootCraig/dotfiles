@@ -4,3 +4,6 @@ README.md skip
 vundle-install.sh exec
 vundle-install.sh skip
 
+antigen-install.sh exec
+antigen-install.sh skip
+
